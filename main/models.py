@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth import authenticate
 from ckeditor.fields import RichTextField
 
 class Project(models.Model):
@@ -29,6 +29,9 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     content = RichTextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    author = models.CharField(max_length=200,default="amir")
+    image = models.ImageField(upload_to='slides/blog/',null=True)
+    review = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
@@ -41,4 +44,13 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.name
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)  # زمان ارسال پیام
+
+    def __str__(self):
+        return f"{self.name} - {self.email}"
 

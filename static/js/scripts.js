@@ -205,3 +205,78 @@ const slides = document.querySelectorAll('.slide');
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('contact-form');
+
+    Array.from(form.elements).forEach(element => {
+        element.addEventListener('blur', function () {
+            if (!this.checkValidity()) {
+                this.classList.add('invalid');
+            } else {
+                this.classList.remove('invalid');
+            }
+        });
+    });
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        validateForm();
+    });
+
+    function validateForm() {
+        let isValid = true;
+        Array.from(form.elements).forEach(element => {
+            if (!element.checkValidity()) {
+                element.classList.add('invalid');
+                isValid = false;
+            } else {
+                element.classList.remove('invalid');
+            }
+        });
+        if (isValid) {
+            console.log('Form is valid and ready to be submitted!');
+        }
+    }
+});
+
+document.getElementById('contactBtn').addEventListener('click', () => {
+    alert('Thank you for your interest! Please call us or send an email to contact@buildstrong.com');
+  });
+
+function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+    function openModal() {
+      document.getElementById('contactModal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('contactModal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('contactModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // ارسال فرم با Ajax
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch("{% url 'contact' %}", {
+        method: "POST",
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById('form-result').innerText = "پیام شما با موفقیت ارسال شد.";
+          this.reset();
+        } else {
+          document.getElementById('form-result').innerText = "خطا در ارسال فرم.";
+        }
+      });
+    });

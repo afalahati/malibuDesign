@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Slideshow, Project, BlogPost, Employee
-
+from django.http import JsonResponse
+from .forms import ContactForm
 
 
 def home(request):
@@ -15,10 +16,21 @@ def home(request):
         'employees': employees,
     })
 
-
-
 def blog_detail(request, id):
     post = get_object_or_404(BlogPost, id=id)
     return render(request, 'main/blog_detail.html', {
         'post': post,
     })
+
+def contact_modal_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()  # ذخیره در دیتابیس
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'errors': form.errors})
+    else:
+        form = ContactForm()
+    return render(request, 'contact_modal.html', {'form': form})
+

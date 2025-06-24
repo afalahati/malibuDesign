@@ -1,47 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="fa">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{{ post.title }}</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #fff;
-    color: #6b7280;
-    max-width: 800px;
-    margin: auto;
-    padding: 3rem 1.5rem;
-  }
-  h1 {
-    font-weight: 700;
-    font-size: 3rem;
-    color: #111827;
-    margin-bottom: 2rem;
-  }
-  article p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: #374151;
-  }
-  a.back {
-    display: inline-block;
-    margin-top: 2rem;
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  a.back:hover {
-    text-decoration: underline;
-  }
-</style>
-</head>
-<body>
-<article>
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+
+<article class="blog_article">
   <h1>{{ post.title }}</h1>
   <p>{{ post.content|safe }}</p>
 </article>
-<a href="{% url 'home' %}" class="back">← بازگشت به بلاگ</a>
-</body>
-</html>
+
+
+{% endblock %}
