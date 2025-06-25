@@ -39,6 +39,7 @@ class BlogPost(models.Model):
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)
+    job = models.CharField(max_length=200,null=True)
     photo = models.ImageField(upload_to='employees/')
     resume = models.TextField()
 

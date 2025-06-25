@@ -11,15 +11,12 @@
   {% empty %}
     <p style="color:white; text-align:center; padding-top: 50vh;">No slides available.</p>
   {% endfor %}
-
   <button class="nav-btn prev" id="prevBtn">&#10094;</button>
   <button class="nav-btn next" id="nextBtn">&#10095;</button>
 </div>
 </section>
 
 <section id="projects">
-  <br><br>
-  <h2 ></h2>
   <h2 >Projects</h2>
   <h2 ></h2>
   <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.5rem;">
@@ -32,13 +29,7 @@
       >
         {% if project.images.all %}
           {% with main_image=project.images.all.0 %}
-          <img class="project-img" src="{{ main_image.image.url }}" alt="{{ project.title }}" style="
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 1px solid #e5e7eb;
-          " />
+          <img class="project-img" src="{{ main_image.image.url }}" alt="{{ project.title }}"  />
           {% endwith %}
         {% else %}
           <div style="width: 100%; height: 220px; background: #f9fafb; display: flex; align-items: center; justify-content: center; color:#9ca3af; font-size:1rem;">
@@ -65,7 +56,7 @@
       </div>
       <div id="slideDescription"></div>
       <div id="slideDescription1">
-        <button id="prevSlideBtn" >Pre</button>
+        <button id="prevSlideBtn" >Previous</button>
         <button id="nextSlideBtn" >Next</button>
       </div>
     </div>
@@ -95,19 +86,31 @@
     </div>
 </section>
 
-<section id="about" class="about-us" >
-  <p>
-    M E H R D A D S A H A F I<br>
-B I O G R A P H Y<br>
-Mehrdad Sahafi is the Principal of Malibu Design Associates, Inc., Malibu General Contractors, Inc. and Malibu Land Company LLC. He has been successfully designing and Developing Estates for over 37 YEARS exclusively in Malibu. Mr. Sahafi Develops Luxury Estates for his own family and for many of the wealthiest people in the world.
-Born in 1959, Mr. Sahafi finished his academic training and education in the discipline of Architecture in the year of 1985. He received his Bachelor of Professional Architecture (BARCH) with Honors from The California State University Pomona (CALPOLY POMONA). During his academic years he participated in numerous National and International Architectural Design Competitions and received numerous design and scholarship awards.
-After graduating and after few years of Architectural Field experience, he went on to establish Malibu Design Associates, Inc. in the year of 1988 in Malibu. He gradually became experienced in his field and used his expertise and creativity in designing Single family Estates in the tough yet beautiful environ of Malibu. He gradually started landing big contracts for complicated and large estates due to the demand that was associated with the Malibu and its attraction to the celebrities and wealthy clientele.
-In the year 1995 he established Malibu General Contractors, Inc. He did this primarily because he did not see; contractors who build his designs quite carry on his vision of creating flawless masterpieces. He was adamant to have aesthetic control over the projects he designed from the start through completion. Establishing Malibu General Contractors Inc. was his answer to this dilemma.
-Since the inception of Malibu General Contractors, Inc. and in the past 30 years
-Mr. Sahafi’s Designed Estates and developments have been winning design acclaims and gracing the covers of Magazines. His unique brand of design, attention to detail and unconventional approach to design makes his Estates one of a kind and talk of the town. Any project associated with Mr. Sahafi and his three reputable companies is bound to demand a much higher premium just because of that fact.
-Mr. Sahafi has left THIRTY SEVEN years of flawless and impeccable tract record by producing architectural masterpieces and construction projects exclusively in Malibu. His great business association with Malibu Chamber of Commerce, Better Business Bureau, (Oldest Member by membership), A+ rated from Western Regional Master Builders Association, Excellent rated at Dunn & Bradstreet and Contractors State Licensing Board are further testimony to his success. In the year 2003 he was chosen to be, “2003 BUSINESSMAN OF THE YEAR” from Malibu by the “Business Advisory Council “of the United State Congress.
-</p>
-</section>
+<section id="services" class="services-section">
+    <h2>What Services Do We Offer?</h2>
+    <div class="services">
+      <div class="service-card">
+        <i class=" fas fa-drafting-compass"></i>
+        <h3>Architectural Design</h3>
+        <p>Designing residential, commercial, and office layouts with elegance and functionality.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-building"></i>
+        <h3>Renovation & Remodeling</h3>
+        <p>Reviving old spaces with modern materials and innovative solutions.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-paint-roller"></i>
+        <h3>Interior Design</h3>
+        <p>Creating stunning interiors in modern, minimal, or classic styles tailored to your needs.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tree"></i>
+        <h3>Landscape Design</h3>
+        <p>Green spaces, rooftop gardens, and eco-friendly landscaping solutions.</p>
+      </div>
+    </div>
+  </section>
 <section id="employees" >
   <div style="max-width:1200px; margin:auto; padding:0 1.25rem;">
     <h2>
@@ -120,17 +123,29 @@ Mr. Sahafi has left THIRTY SEVEN years of flawless and impeccable tract record b
       justify-items: center;
     ">
       {% for employee in employees %}
-      <div class="employee-card"
+      <div class="bio-card"
       tabindex="0"
       role="button"
       aria-haspopup="dialog"
       aria-controls="employeeModal{{ employee.id }}"
-      aria-label="View resume of {{ employee.name }}"
-      data-employee-id="{{ employee.id }}"
-      >
-        <img src="{{ employee.photo.url }}" alt="{{ employee.name }}" />
-        <h3 >{{ employee.name }}</h3>
+      data-employee-id="{{ employee.id }}">
+    <div class="bio-image">
+      <img src="{{ employee.photo.url }}" alt="{{ employee.name }}" />
+    </div>
+    <div class="bio-content">
+      <h3>{{ employee.name }}</h3>
+      <h4>{{ employee.job }}</h4>
+      <p>
+Founder & Principal of Malibu Design Associates, Inc. with 37+ years of excellence in designing and building award-winning luxury estates exclusively in Malibu.
+</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
+    </div>
+  </div>
+      
       {% endfor %}
     </div>
   </div>
@@ -138,24 +153,10 @@ Mr. Sahafi has left THIRTY SEVEN years of flawless and impeccable tract record b
   <div id="employeeModal{{ employee.id }}" class="employee-modal" 
   role="dialog" aria-modal="true" aria-labelledby="employeeName{{ employee.id }}" tabindex="-1"
   >
-    <div style="
-      background: #ffffff;
-      border-radius: 0.75rem;
-      max-width: 600px;
-      margin: auto;
-      padding: 2rem;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
-      position: relative;
-    ">
+    <div class="employee-modal-back" >
       <button aria-label="Close resume of {{ employee.name }}" class="close-btn" >&times;</button>
-      <h2 id="employeeName{{ employee.id }}" >{{ employee.name }}</h2>
-      <div style="
-        color: #6b7280;
-        font-size: 1rem;
-        line-height: 1.6;
-        white-space: pre-wrap;
-        font-family: 'Inter', sans-serif;
-      ">
+      <h3 id="employeeName{{ employee.id }}" style="text-align: center;" >{{ employee.name }}</h3>
+      <div class="employee-modal-text">
         {{ employee.resume }}
       </div>
     </div>

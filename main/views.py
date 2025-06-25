@@ -9,20 +9,7 @@ def home(request):
     projects = Project.objects.all()
     blog_posts = BlogPost.objects.order_by('-created_at')
     employees = Employee.objects.all()
-    return render(request, 'main/home.html', {
-        'slides': slides,
-        'projects': projects,
-        'blog_posts': blog_posts,
-        'employees': employees,
-    })
-
-def blog_detail(request, id):
-    post = get_object_or_404(BlogPost, id=id)
-    return render(request, 'main/blog_detail.html', {
-        'post': post,
-    })
-
-def contact_modal_view(request):
+    
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -32,5 +19,17 @@ def contact_modal_view(request):
             return JsonResponse({'success': False, 'errors': form.errors})
     else:
         form = ContactForm()
-    return render(request, 'contact_modal.html', {'form': form})
+    return render(request, 'main/home.html', {
+        'slides': slides,
+        'projects': projects,
+        'blog_posts': blog_posts,
+        'employees': employees,
+        'form': form,
+    })
+
+def blog_detail(request, id):
+    post = get_object_or_404(BlogPost, id=id)
+    return render(request, 'main/blog_detail.html', {
+        'post': post,
+    })
 

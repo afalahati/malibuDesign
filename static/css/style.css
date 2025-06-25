@@ -49,7 +49,7 @@ html, body {
     }
 
     .menu a:hover {
-      color: #ffcc00;
+      color: #0077ff;
     }
 
     .menu-toggle {
@@ -83,6 +83,9 @@ html, body {
       .menu-toggle {
         display: block;
       }
+      .qrcode{
+   display: none;
+  }
     }
 
 .slideshow {
@@ -214,22 +217,7 @@ h1 {
   color: #1e40af;
   text-decoration: underline;
 }
-.about-us p {
-border: 2px solid #d1d5db; /* خاکستری روشن */
-border-radius: 0.75rem;
-padding: 1rem 1.5rem;
-color: #6b7280; /* خاکستری متن */
-font-size: 1rem;
-line-height: 1.6;
-transition: border-color 0.3s ease;
-max-width: 800px;
-margin: 0 auto;
-}
-.about-us p:hover,
-.about-us p:focus {
-border-color: #2563eb; /* آبی ملایم */
-outline: none;
-}
+
 
  
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -241,8 +229,7 @@ outline: none;
 }
 
 .about-us p {
-  border: 2px solid #d1d5db; /* خاکستری روشن */
-  border-radius: 0.75rem;
+  
   padding: 1rem 1.5rem;
   color: #6b7280; /* خاکستری متن */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -252,6 +239,7 @@ outline: none;
   max-width: 800px;
   margin: 0 auto;
   transition: border-color 0.3s ease;
+  text-align: justify
 }
 
 .about-us p:hover,
@@ -267,8 +255,9 @@ outline: none;
   min-height: 48px;
   text-align: center;
 }
+#nextSlideBtn,
 #prevSlideBtn{
-  background: #f0f0f0;
+  background: #ffb600;
   border: none;
   padding: 10px 20px;
   border-radius: 0.5rem;
@@ -278,16 +267,9 @@ outline: none;
   box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
   transition: background-color 0.3s;
 }
-#nextSlideBtn{
-  background: #f0f0f0;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: #111827;
-  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-  transition: background-color 0.3s;
+#nextSlideBtn:hover,
+#prevSlideBtn:hover{
+  background: #0077ff;
 }
 #slideshowContainer{
   position: relative; 
@@ -312,10 +294,13 @@ outline: none;
   background: transparent;
   border: none;
   font-size: 2rem;
-  color: #6b7280;
+  color: #ffb600;
   cursor: pointer;
   line-height: 1;
   z-index: 10;
+}
+#modalCloseBtn:hover{
+  color: #0077ff ;
 }
 #projectModal{
   display: none;
@@ -334,12 +319,41 @@ outline: none;
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
-  background: #fff;
+  background: #eaeaea;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
   
 }
+.about-us{
+  margin: 20px 350px ;
+  margin-top: 50px;
+  padding:  1rem 5rem; 
+  background: #fff; 
+  text-align: justify;
+  border: 2px solid #d1d5db; /* خاکستری روشن */
+  border-radius: 0.75rem;
+  transition: border-color 0.3s ease;
+}
+.about-us h2{
+  text-align: center;
+}
+.about-us h4{
+  text-align: center;
+  color: #6b7280;
+}
+.about-us p {
 
+color: #6b7280; /* خاکستری متن */
+font-size: 1rem;
+line-height: 1.6;
+max-width: 800px;
+margin: 0 auto;
+}
+.about-us:hover,
+.about-us:focus {
+border-color: #2563eb; /* آبی ملایم */
+outline: none;
+}
 #projects{
   padding: 4rem 1.25rem; 
   max-width: 1200px; 
@@ -368,11 +382,7 @@ outline: none;
   justify-content: space-between; 
   gap: 20px;
 }
-.about-us{
-  padding: 4rem 1rem 5rem; 
-  background: #fff; 
-  text-align: center;
-}
+
 #employees{
   background:#ffffff; 
   padding-top:4rem; 
@@ -475,12 +485,14 @@ outline: none;
     overflow: hidden;
     border: 2px solid #d1d5db; /* خاکستری روشن */
     border-radius: 0.75rem;
+  background: #eaeaea;
+    
 }
 .read-more :hover{
   transform: scale(2, 2);
 }
 .article-content {
-    
+    background-color:  #eaeaea;
     flex: 2;
     padding: 20px;
 }
@@ -526,6 +538,16 @@ outline: none;
   padding: 4rem 1rem 5rem; 
   background: #fff; 
   text-align: center;
+    margin: 2% 20% 2% 20%;
+    padding: auto;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+    border: 2px solid #d1d5db; /* خاکستری روشن */
+    border-radius: 0.75rem;
+}
+.blog_article:hover{
+  border-color: #2563eb; /* آبی ملایم */
+  outline: none;
 }
 footer {
     background: #222;
@@ -565,29 +587,18 @@ footer {
     gap: 10px;
     font-size: 1rem;
   }
-
+.contact-item a{
+  color: #fff;
+  text-decoration: none;
+}
   .contact-item svg {
     fill: #ffb600;
     width: 24px;
     height: 24px;
   }
 
-  .btn-contact {
-    margin-top: 25px;
-    background: #ffb600;
-    color: #222;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-size: 1rem;
-  }
 
-  .btn-contact:hover {
-    background: #0077ff;
-  }
+
 
   /* Construction animated icon */
   .construction-icon {
@@ -632,20 +643,25 @@ footer {
   background-color: #0077ff;
 }
     .open-modal-btn {
-      margin: 100px auto;
-      display: block;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: white;
+      background: #ffb600;
+      color: #222;
+      padding: 12px 30px;
       border: none;
-      border-radius: 6px;
+      border-radius: 30px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1rem;
+      margin: 20px;
     }
+    .open-modal-btn:hover {
+    background: #0077ff;
+  }
 
     /* بک‌گراند مودال */
     .modal {
       display: none;
+
       position: fixed;
       z-index: 999;
       left: 0;
@@ -658,28 +674,23 @@ footer {
 
     /* محتویات مودال */
     .modal-content {
+      color: #222;
       background-color: #fff;
       margin: 10% auto;
-      padding: 20px;
+      padding: 10px;
       border-radius: 10px;
       width: 90%;
       max-width: 400px;
       position: relative;
     }
 
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      left: 15px;
-      font-size: 24px;
-      cursor: pointer;
-      color: #333;
-    }
+    
 
     form input, form textarea {
       width: 100%;
+      color: #222;
       padding: 10px;
-      margin: 10px 0;
+      margin: 5px 0;
       border-radius: 6px;
       border: 1px solid #ccc;
       font-size: 14px;
@@ -687,7 +698,7 @@ footer {
 
     form button {
       width: 100%;
-      background-color: #28a745;
+      background-color: #ffb600;
       color: white;
       padding: 10px;
       border: none;
@@ -697,5 +708,178 @@ footer {
     }
 
     form button:hover {
-      background-color: #218838;
+      background-color: #0077ff;
     }
+    #contactForm label{
+      color: #222;
+    }
+    section{margin-bottom: 50px;}
+
+     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    .bio-card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 320px;
+      transition: transform 0.3s ease;
+      border: 2px solid #d1d5db; /* خاکستری روشن */
+    border-radius: 0.75rem;
+    }
+    .bio-card:hover{
+      border-color: #2563eb; /* آبی ملایم */
+      outline: none;
+      cursor: pointer;
+    }
+
+    .bio-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .bio-image img{
+      width: 100%;
+      height: 200px;
+      background: url('https://i.pravatar.cc/300') center/cover no-repeat;
+    }
+
+    .bio-content {
+      padding: 20px;
+      text-align: center;
+  background: #eaeaea;
+
+    }
+
+    .bio-content h2 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .bio-content h4 {
+      margin: 5px 0 15px;
+      color: #777;
+      font-weight: normal;
+    }
+
+    .bio-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #555;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #0077ff;
+    }
+  .employee-modal-back{
+    background: #ffffff;
+      border-radius: 0.75rem;
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      position: relative;
+  }
+  .employee-modal-text{
+    color: #6b7280;
+        font-size: 1rem;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        font-family: 'Inter', sans-serif;
+        text-align: justify;
+  }
+  .close-btn {
+    
+      text-align: right;
+      color: #ffb600;
+      top: 10px;
+      left: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .close-btn:hover{
+      color: #0077ff;
+    }
+
+  .services-section {
+      padding: 50px 20px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .services-section h2 {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #f0f0f0;
+      color: #ffb600;
+      border-radius: 16px;
+      padding: 30px 20px;
+      width: 280px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      border: 2px solid #d1d5db; /* خاکستری روشن */
+      border-radius: 0.75rem;
+    }
+    .service-card:hover{
+      border-color: #2563eb; /* آبی ملایم */
+      outline: none;
+      
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      background-color: #eaeaea;
+    }
+
+    .service-card i {
+      font-size: 2.5em;
+      color: #3a3a3a;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3em;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.95em;
+      color: #555;
+      line-height: 1.6;
+    }
+    .service-icon{
+      color: #ffb600;
+    }
+  .project-img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .qrcode{
+    width: 50px;
+  }
+ 
