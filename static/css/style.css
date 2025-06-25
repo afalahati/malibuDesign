@@ -483,6 +483,7 @@ outline: none;
 .article-content p {
     color: #666;
     margin: 0 0 20px 0;
+    
 }
 
 .meta-info {
@@ -520,6 +521,9 @@ outline: none;
     overflow: hidden;
     border: 2px solid #d1d5db; /* خاکستری روشن */
     border-radius: 0.75rem;
+}
+.blog_article p{
+  text-align: justify;
 }
 .blog_article:hover{
   border-color: #2563eb; /* آبی ملایم */
@@ -890,5 +894,14 @@ footer {
   overflow: hidden;
   float: right;
   display: flex;
+}
+.article-container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+}
+.slide-description {
+  display: none;
 }
     }

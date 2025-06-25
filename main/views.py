@@ -29,7 +29,13 @@ def home(request):
 
 def blog_detail(request, id):
     post = get_object_or_404(BlogPost, id=id)
+
+    # افزایش تعداد بازدید
+    post.review += 1
+    post.save(update_fields=['review'])  # ذخیره فقط همین فیلد
     return render(request, 'main/blog_detail.html', {
         'post': post,
     })
+
+
 
