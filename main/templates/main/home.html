@@ -29,7 +29,7 @@
       >
         {% if project.images.all %}
           {% with main_image=project.images.all.0 %}
-          <img class="project-img" src="{{ main_image.image.url }}" alt="{{ project.title }}"  />
+          <img class="project-img" src="{{ project.main_image.url }}" alt="{{ project.title }}"  />
           {% endwith %}
         {% else %}
           <div style="width: 100%; height: 220px; background: #f9fafb; display: flex; align-items: center; justify-content: center; color:#9ca3af; font-size:1rem;">
@@ -111,8 +111,8 @@
       </div>
     </div>
   </section>
-<section id="employees" >
-  <div style="max-width:1200px; margin:auto; padding:0 1.25rem;">
+<section id="Biography" >
+  <!--<div style="max-width:1200px; margin:auto; padding:0 1.25rem;">
     <h2>
       Our Team
     </h2>
@@ -149,6 +149,7 @@ Founder & Principal of Malibu Design Associates, Inc. with 37+ years of excellen
       {% endfor %}
     </div>
   </div>
+  
   {% for employee in employees %}
   <div id="employeeModal{{ employee.id }}" class="employee-modal" 
   role="dialog" aria-modal="true" aria-labelledby="employeeName{{ employee.id }}" tabindex="-1"
@@ -161,6 +162,28 @@ Founder & Principal of Malibu Design Associates, Inc. with 37+ years of excellen
       </div>
     </div>
   </div>
-  {% endfor %}
+  {% endfor %}-->
+<div class="about-card" id="about">
+  <h2 class="about-title">Biography of the founder</h2>
+  <p class="about-text">
+    Mehrdad Sahafi is the Principal of <span class="highlight" >Design Associates, Inc., Malibu General Contractors, Inc. and Malibu Land Company LLC.</span> He has been successfully designing and Developing Estates for over 37 YEARS exclusively in Malibu. Mr. Sahafi Develops Luxury Estates for his own family and for many of the wealthiest people in the world. Born in 1959, Mr. Sahafi finished his academic training and education in the discipline of Architecture in the year of 1985. He received his Bachelor of Professional Architecture (BARCH) with Honors from The California State University Pomona (CALPOLY POMONA). During his academic years he participated in numerous National and International Architectural Design Competitions and received numerous design and scholarship awards. After graduating and after few years of Architectural Field experience, he went on to establish Malibu Design Associates, Inc. in the year of 1988 in Malibu. He gradually became experienced in his field and used his expertise and creativity in designing Single family Estates in the tough yet beautiful environ of Malibu. He gradually started landing big contracts for complicated and large estates due to the demand that was associated with the Malibu and its attraction to the celebrities and wealthy clientele. In the year 1995 he established Malibu General Contractors, Inc. He did this primarily because he did not see; contractors who build his designs quite carry on his vision of creating flawless masterpieces. He was adamant to have aesthetic control over the projects he designed from the start through completion. Establishing Malibu General Contractors Inc. was his answer to this dilemma. Since the inception of Malibu General Contractors, Inc. and in the past 30 years Mr. Sahafi’s Designed Estates and developments have been winning design acclaims and gracing the covers of Magazines. His unique brand of design, attention to detail and unconventional approach to design makes his Estates one of a kind and talk of the town. Any project associated with Mr. Sahafi and his three reputable companies is bound to demand a much higher premium just because of that fact. Mr. Sahafi has left THIRTY SEVEN years of flawless and impeccable tract record by producing architectural masterpieces and construction projects exclusively in Malibu. His great business association with Malibu Chamber of Commerce, Better Business Bureau, (Oldest Member by membership), A+ rated from Western Regional Master Builders Association, Excellent rated at Dunn & Bradstreet and Contractors State Licensing Board are further testimony to his success. In the year 2003 he was chosen to be, “2003 BUSINESSMAN OF THE YEAR” from Malibu by the “Business Advisory Council “of the United State Congress.
+  </p>
+</div>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  observer.observe(document.querySelector('#about'));
+</script>
 </section>
 {% endblock %}

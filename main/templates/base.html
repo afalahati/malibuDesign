@@ -20,7 +20,7 @@
 			<a href="{% url 'home' %}#projects">Projects</a>
 			<a href="{% url 'home' %}#blog">Blog</a>
 			<a href="{% url 'home' %}#services">Services</a>
-			<a href="{% url 'home' %}#employees">Employees</a>
+			<a href="{% url 'home' %}#Biography">Biography</a>
 		</div>
 	</div>
 	<img class="qrcode" src="https://api.qrserver.com/v1/create-qr-code/?color=0077FF&amp;bgcolor=FFB600&amp;data=tel%3A%2B13102907490&amp;qzone=1&amp;margin=0&amp;size=400x400&amp;ecc=Q" alt="qr code" />
@@ -46,7 +46,7 @@
     </div>
 	<div class="contact-item">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 8v13h18V8l-9-6-9 6zm7 9H7v-2h3v2zm6 0h-3v-2h3v2z"/></svg>
-      <span><a href="https://www.google.com/maps?q=34.0380,118.6930" target="_blank">23823 Malibu Road, Suite 50-488 Malibu, CA 90265</a></span>
+      <span>23823 Malibu Road, Suite 50-488 Malibu, CA 90265</span>
     </div>
 	
   </div>
@@ -115,6 +115,20 @@
       }
     });
   });
+</script>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // فقط یک بار انیمیشن اجرا بشه
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  observer.observe(document.querySelector('#about'));
 </script>
     <script src="{% static 'js/scripts.js' %}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
