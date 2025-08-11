@@ -1005,3 +1005,23 @@ footer {
         font-size: 16px;
       }
     }
+
+
+.magazine-slider {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.magazine-slider h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}

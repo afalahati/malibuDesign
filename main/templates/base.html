@@ -9,7 +9,7 @@
   <meta name="keywords" content="villa,house,building,Crostacei,Malibu,malibu,contractor,contractors,constractor,architecture,California,beach,mehrdad sahafi">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -79,6 +79,10 @@
     <path d="M32 2L12 14v14c0 11 9 20 20 20s20-9 20-20V14L32 2zM20 38a4 4 0 118 0 4 4 0 01-8 0zm20 0a4 4 0 118 0 4 4 0 01-8 0z"/>
     <rect x="22" y="18" width="20" height="6" rx="1" ry="1"/>
   </svg>
+  <br><br>
+  <a href="https://wa.me/+989307737667" target="_blank" style="color:#ffb600; text-decoration:none; font-weight:bold;">
+    © 2025 Amir — Contact via WhatsApp
+  </a>
 </footer>
 	<script>
    const contactForm = document.getElementById('contactForm');
@@ -135,5 +139,26 @@
 </script>
     <script src="{% static 'js/scripts.js' %}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true, // بی‌نهایت چرخش
+    spaceBetween: 20,
+    centeredSlides: true,
+    slidesPerView: 1,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: false
+    }
+  });
+</script>
 </body>
 </html>

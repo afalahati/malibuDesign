@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Malibu General Contractors{% endblock %}
 {% block content %}
 
@@ -111,6 +112,34 @@
       </div>
     </div>
   </section>
+  <!-- لینک‌های Swiper (CDN) -->
+
+
+
+<section class="magazine-slider">
+  <h1> Malibu Magazine Article</h1>
+  
+  <!-- کانتینر اسلایدر -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="{% static 'img/page1.png' %}" alt="Page1"></div>
+      <div class="swiper-slide"><img src="{% static 'img/page2.png' %}" alt="Page2"></div>
+      <div class="swiper-slide"><img src="{% static 'img/page3.png' %}" alt="Page3"></div>
+    </div>
+
+    <!-- دکمه‌ها -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- نقطه‌ها -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
+
+
+
 <section id="Biography" >
   <!--<div style="max-width:1200px; margin:auto; padding:0 1.25rem;">
     <h2>
