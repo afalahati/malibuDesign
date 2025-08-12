@@ -18,8 +18,9 @@ html, body {
       justify-content: space-between;
       flex-wrap: wrap;
       width: 100%;
-      background: #222;
+      background-color: rgba(0, 0, 0, 0.5); /* قرمز با شفافیت ۵۰٪ */
       position: sticky;
+      
       top: 0;
       z-index: 1000;
       transition: background-color 0.3s ease;
@@ -864,6 +865,14 @@ footer {
   }
  
    @media (max-width: 768px) {
+    .logo img {
+      font-size: 52px;
+      width: 200px;
+      font-weight: bold;
+      margin:0px 0px 0px 50%;
+      text-align: center;
+
+    }
       .menu-container {
         width: 100%;
         margin-right: 0;
