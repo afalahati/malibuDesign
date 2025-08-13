@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-5(w60ombx3_6sf0xx*u7!t-+k00z$nccn54nt-swdi1pdyhqzq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://malibugeneralcontractors.net','malibugeneralcontractors.net','www.malibugeneralcontractors.net']
 
 
 # Application definition
