@@ -1,0 +1,18 @@
+# فایل robots.txt برای سایت Django
+
+# همه ربات‌ها
+User-agent: *
+
+# مسیرهای مدیریت و صفحات حساس Django
+Disallow: /admin/
+Disallow: /accounts/login/
+Disallow: /accounts/logout/
+Disallow: /private/
+Disallow: /tmp/
+
+# اجازه دسترسی به فایل‌های استاتیک و رسانه‌ای
+Allow: /static/
+Allow: /media/
+
+# لینک نقشه سایت
+Sitemap: https://malibugeneralcontractors.net/sitemap.xml
