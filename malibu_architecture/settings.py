@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://malibugeneralcontractors.net','malibugeneralcontractors.net','www.malibugeneralcontractors.net']
+ALLOWED_HOSTS = ['malibudesign-2.onrender.com','https://malibugeneralcontractors.net','malibugeneralcontractors.net','www.malibugeneralcontractors.net']
 
 
 # Application definition
