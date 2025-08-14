@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/opt/render/project/src/media/'
+MEDIA_ROOT = '/opt/render/project/data/media/'
 
 
 LOGGING = {
