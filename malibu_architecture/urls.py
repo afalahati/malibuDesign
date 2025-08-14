@@ -22,4 +22,11 @@ urlpatterns = [
 ]
 # اضافه کردن این خط برای سرو فایل‌های رسانه‌ای
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    # فقط برای تست Render، می‌توان مسیر موقت با یک view ساخت
+    from django.views.static import serve
+    urlpatterns += [
+        path('media/<path:path>/', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
